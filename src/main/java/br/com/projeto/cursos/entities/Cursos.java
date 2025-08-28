@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -22,9 +23,9 @@ import lombok.NoArgsConstructor;
 public class Cursos {
 
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String name;
     private String category;
     private String active;
@@ -34,7 +35,7 @@ public class Cursos {
     private LocalDateTime created_at;
 
     @UpdateTimestamp 
-    @Column(name = "created_at")
+    @Column(name = "updated_at")
     private LocalDateTime updated_at;
 
 
