@@ -36,6 +36,18 @@ public class CursosService {
         repository.deleteById(id);
     }
 
+    public void updateById(Long id, Cursos curso) {
+        Optional<Cursos> existingCurso = repository.findById(id);
+        if (existingCurso.isPresent()) {
+            Cursos updatedCurso = existingCurso.get();
+            updatedCurso.setName(curso.getName());
+            updatedCurso.setCategory(curso.getCategory());
+            updatedCurso.setActive(curso.getActive());
+            updatedCurso.setUpdated_at(java.time.LocalDateTime.now());
+            repository.save(updatedCurso);
+        }
+    }   
+
       
 
 }

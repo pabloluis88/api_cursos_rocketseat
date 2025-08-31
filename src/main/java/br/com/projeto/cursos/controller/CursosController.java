@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.projeto.cursos.entities.Cursos;
 import br.com.projeto.cursos.service.CursosService;
+
 
 
 @RestController
@@ -47,6 +49,13 @@ public class CursosController {
         service.deleteById(id);
         return ResponseEntity.noContent().build();  
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> updateById(@PathVariable Long id, @RequestBody Cursos curso) {
+        service.updateById(id, curso);
+        return ResponseEntity.noContent().build();
+    }
+
 
 
     
