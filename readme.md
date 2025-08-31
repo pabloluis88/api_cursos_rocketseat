@@ -8,7 +8,7 @@ Uma API REST desenvolvida em **Spring Boot** para gerenciamento de cursos, com b
 - ✅ Listar todos os cursos
 - ✅ Buscar curso por ID
 - ✅ Excluir cursos
-- 🚧 Atualizar cursos (em desenvolvimento)
+- ✅ Atualizar cursos 
 - 🚧 Filtros de busca (em desenvolvimento)
 - 🚧 Toggle de status ativo/inativo (em desenvolvimento)
 
@@ -76,6 +76,11 @@ GET /cursos/{id}
 ### 🗑️ Excluir Curso
 ```http
 DELETE /cursos/{id}
+```
+
+### 🗑️ Atualizar Curso
+```http
+PUT /cursos/{id}
 ```
 
 ## 📦 Estrutura do Projeto
@@ -158,7 +163,6 @@ spring.h2.console.path=/h2-console
 
 ## 🏗️ Próximas Funcionalidades
 
-- [ ] Endpoint PUT para atualização completa
 - [ ] Endpoint PATCH para toggle de status
 - [ ] Filtros de busca por nome e categoria
 - [ ] Validações de entrada
